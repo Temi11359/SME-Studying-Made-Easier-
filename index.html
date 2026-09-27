@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="top-header">
+        <button id="menuBtn" class="icon-btn">☰</button>
+        <h1>Study App</h1>
+        <button id="settingsBtn" class="icon-btn">⚙️</button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Dashboard/Home Section -->
+        <section id="dashboard" class="section active">
+            <div class="welcome-box">
+                <h2>Welcome to Study AI</h2>
+                <p>Let's make studying smarter</p>
+            </div>
+
+            <!-- Flashcard Dashboard -->
+            <div class="card card-flashcard-main">
+                <p class="flashcard-label">Today's Flashcard</p>
+                <div id="mainFlashcard" class="flashcard-display">
+                    <p>What is Time Complexity?</p>
+                </div>
+                <button id="mainRevealBtn" class="btn-secondary">Reveal Answer</button>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="card-row">
+                <div class="card card-small">
+                    <p class="label">Cards Today</p>
+                    <p class="number">24</p>
+                </div>
+                <div class="card card-small">
+                    <p class="label">Streak</p>
+                    <p class="number">7 days</p>
+                </div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="card">
+                <h3>Study Recommendations</h3>
+                <p class="recommendation">📌 Graph Theory - Focus this week</p>
+                <p class="recommendation">📌 Review Dynamic Programming</p>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="section">
+            <div class="section-title">Quiz Mode</div>
+            <div class="card card-quiz">
+                <h3 id="questionText">Q1: What is Quick Sort?</h3>
+                <div class="quiz-options">
+                    <button class="option">A) O(n²) worst case</button>
+                    <button class="option">B) O(n log n) average</button>
+                    <button class="option">C) O(n) best case</button>
+                </div>
+            </div>
+            <button class="btn-primary">Next Question</button>
+            
+            <!-- Review Mode (appears after quiz) -->
+            <div id="reviewSection" style="display:none;">
+                <div class="card">
+                    <h3>Review Your Answers</h3>
+                    <div class="review-item">
+                        <p class="correct">✓ Correct Answer</p>
+                        <p class="your-answer">Your Answer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organization Section -->
+        <section id="organization" class="section">
+            <div class="section-title">Organization</div>
+            <div class="card">
+                <h3>Courses</h3>
+                <div class="org-item">📚 CSC 101 - Algorithms</div>
+                <div class="org-item">📚 CSC 202 - Data Structures</div>
+                <button class="small-btn">+ Add Course</button>
+            </div>
+            <div class="card">
+                <h3>Topics</h3>
+                <div class="org-item">🏷️ Sorting Algorithms</div>
+                <div class="org-item">🏷️ Graph Theory</div>
+                <button class="small-btn">+ Add Topic</button>
+            </div>
+            <div class="card">
+                <h3>Subjects</h3>
+                <div class="org-item">📖 Computer Science</div>
+                <div class="org-item">📖 Mathematics</div>
+                <button class="small-btn">+ Add Subject</button>
+            </div>
+        </section>
+
+        <!-- Difficulty Level Section -->
+        <section id="difficulty" class="section">
+            <div class="section-title">Difficulty Levels</div>
+            <div class="card card-spaced-rep">
+                <h3>Spaced Repetition System</h3>
+                <p class="small-text">Cards due for review based on difficulty</p>
+            </div>
+            <div class="card">
+                <p class="label">Easy Cards</p>
+                <p class="big-number">12</p>
+                <p class="small-text">Review in 7 days</p>
+            </div>
+            <div class="card">
+                <p class="label">Medium Cards</p>
+                <p class="big-number">18</p>
+                <p class="small-text">Review in 3 days</p>
+            </div>
+            <div class="card">
+                <p class="label">Hard Cards</p>
+                <p class="big-number">24</p>
+                <p class="small-text">Review tomorrow</p>
+            </div>
+            <div class="card">
+                <h3>Rate Card Difficulty</h3>
+                <div class="btn-group-horizontal">
+                    <button class="btn-difficulty">Easy</button>
+                    <button class="btn-difficulty">Medium</button>
+                    <button class="btn-difficulty">Hard</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Dashboard -->
+        <section id="statistics" class="section">
+            <div class="section-title">Statistics Dashboard</div>
+            <div class="card card-large">
+                <p class="label">Overall Accuracy</p>
+                <p class="big-number">88%</p>
+            </div>
+            <div class="card-row">
+                <div class="card card-stat">
+                    <p class="label">Cards Studied</p>
+                    <p class="number">523</p>
+                </div>
+                <div class="card card-stat">
+                    <p class="label">Retention Rate</p>
+                    <p class="number">88%</p>
+                </div>
+            </div>
+            <div class="card-row">
+                <div class="card card-stat">
+                    <p class="label">Study Time</p>
+                    <p class="number">12.5h</p>
+                </div>
+                <div class="card card-stat">
+                    <p class="label">Quiz Score</p>
+                    <p class="number">92%</p>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Progress This Week</h3>
+                <div class="chart-placeholder">📊 Chart visualization</div>
+            </div>
+            <div class="card">
+                <h3>Weak Topics</h3>
+                <div class="performance-item weak">⚠️ Graph Theory - 65%</div>
+                <div class="performance-item weak">⚠️ Dynamic Programming - 72%</div>
+            </div>
+            <div class="card">
+                <h3>Strong Topics</h3>
+                <div class="performance-item strong">✓ Sorting - 94%</div>
+                <div class="performance-item strong">✓ Arrays - 91%</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Side Menu -->
+    <aside id="sideMenu" class="side-menu" style="display:none;">
+        <div class="menu-header">
+            <h2>Menu</h2>
+            <button id="closeMenuBtn" class="close-btn">✕</button>
+        </div>
+        <button class="menu-item" data-section="upload">📁 File Upload & Extract</button>
+        <button class="menu-item" data-section="flashcards">🎴 Flashcard Generation</button>
+        <button class="menu-item" data-section="progress">📈 Progress Tracking</button>
+        <button class="menu-item" data-section="performance">📊 Performance Analytics</button>
+        <button class="menu-item" data-section="sessions">⏱️ Study Sessions</button>
+        <button class="menu-item" data-section="notes">📝 Notes</button>
+        <button class="menu-item" data-section="search">🔍 Search & Filter</button>
+        <button class="menu-item" data-section="settings-menu">⚙️ Settings</button>
+    </aside>
+
+    <!-- Settings Menu -->
+    <aside id="settingsMenu" class="side-menu settings-menu" style="display:none;">
+        <div class="menu-header">
+            <h2>Settings</h2>
+            <button id="closeSettingsBtn" class="close-btn">✕</button>
+        </div>
+        <button class="menu-item">👤 Change Username</button>
+        <button class="menu-item">🔐 Change Password</button>
+        <button class="menu-item" id="darkModeToggle">🌙 Dark Mode</button>
+        <button class="menu-item">➕ Add New User</button>
+        <button class="menu-item logout">🚪 Logout</button>
+    </aside>
+
+    <!-- Hidden Sections from Side Menu -->
+    <section id="upload" class="section">
+        <div class="section-title">Upload Materials</div>
+        <div class="card">
+            <div class="upload-drop">
+                <p>📁 Drag & Drop Files</p>
+                <p class="small-text">PDF, Images, Docs</p>
+                <input type="file" id="fileInput" multiple>
+            </div>
+        </div>
+        <button class="btn-primary">Extract & Generate Flashcards</button>
+    </section>
+
+    <section id="flashcards" class="section">
+        <div class="section-title">Flashcards</div>
+        <div class="card card-flashcard">
+            <p id="flashcardText">What is Time Complexity?</p>
+        </div>
+        <button class="btn-secondary">Reveal Answer</button>
+        <div class="card-row">
+            <button class="btn-nav">← Prev</button>
+            <span class="progress">1 / 24</span>
+            <button class="btn-nav">Next →</button>
+        </div>
+    </section>
+
+    <section id="progress" class="section">
+        <div class="section-title">Progress Tracking</div>
+        <div class="card-row">
+            <div class="card card-stat">
+                <p class="label">Today</p>
+                <p class="number">24</p>
+            </div>
+            <div class="card card-stat">
+                <p class="label">This Week</p>
+                <p class="number">142</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="performance" class="section">
+        <div class="section-title">Performance Analytics</div>
+        <div class="card">
+            <h3>Quiz Accuracy by Topic</h3>
+            <div class="chart-placeholder">📊 Analytics</div>
+        </div>
+    </section>
+
+    <section id="sessions" class="section">
+        <div class="section-title">Study Sessions</div>
+        <div class="card card-timer">
+            <p class="timer">00:15:32</p>
+            <p class="small-text">Cards studied: 12</p>
+        </div>
+        <button class="btn-primary">Start Session</button>
+    </section>
+
+    <section id="notes" class="section">
+        <div class="section-title">My Notes</div>
+        <textarea placeholder="Write your notes..." class="note-input"></textarea>
+        <button class="btn-primary">Save Note</button>
+    </section>
+
+    <section id="search" class="section">
+        <div class="section-title">Search & Filter</div>
+        <input type="text" placeholder="Search cards, notes, topics..." class="search-input">
+        <div class="card">
+            <div id="searchResults"></div>
+        </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <button class="nav-btn active" data-section="dashboard">📊 Home</button>
+        <button class="nav-btn" data-section="quiz">❓ Quiz</button>
+        <button class="nav-btn" data-section="organization">📂 Organization</button>
+        <button class="nav-btn" data-section="difficulty">⭐ Difficulty</button>
+        <button class="nav-btn" data-section="statistics">📈 Stats</button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
